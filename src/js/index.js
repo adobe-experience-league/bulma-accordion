@@ -26,10 +26,10 @@ export default class bulmaAccordion extends EventEmitter {
    * @method
    * @return {Array} Array of all Carousel instances
    */
-  static attach(selector = '.accordions') {
+  static attach(selector = '.accordions', ctx = document) {
     let instances = new Array();
 
-    const elements = document.querySelectorAll(selector);
+    const elements = ctx.querySelectorAll(selector);
     [].forEach.call(elements, element => {
       setTimeout(() => {
         instances.push(new bulmaAccordion(element));

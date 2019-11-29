@@ -194,10 +194,11 @@ var bulmaAccordion = function (_EventEmitter) {
     key: 'attach',
     value: function attach() {
       var selector = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '.accordions';
+      var ctx = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;
 
       var instances = new Array();
 
-      var elements = document.querySelectorAll(selector);
+      var elements = ctx.querySelectorAll(selector);
       [].forEach.call(elements, function (element) {
         setTimeout(function () {
           instances.push(new bulmaAccordion(element));
